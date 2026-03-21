@@ -33,7 +33,7 @@
 Убедитесь, что у вас установлен Node.js. Склонируйте репозиторий:
 
 ```bash
-git clone <ссылка_на_ваш_репозиторий>
+git clone <https://github.com/exsyyy/safeboard-tesk-task>
 cd taskjavascript
 ```
 
