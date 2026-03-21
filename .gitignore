@@ -1,0 +1,20 @@
+# Зависимости
+node_modules/
+/client/node_modules
+/server/node_modules
+
+# Сборка
+dist/
+build/
+
+# Файлы окружения
+.env
+
+# Системные файлы и IDE
+.DS_Store
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
