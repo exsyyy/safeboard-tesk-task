@@ -8,8 +8,8 @@ function App() {
     const layoutStyle = {
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',      // Растягиваем на весь экран
-        backgroundColor: 'transparent', // Убедись, что здесь тот же цвет, что в футере
+        minHeight: '100vh',
+        backgroundColor: 'transparent',
         color: '#1c1c1f'
     };
 
@@ -33,11 +33,11 @@ function App() {
     };
 
     const footerStyle = {
-        padding: '20px 0',          // Уменьшили вертикальный отступ
+        padding: '20px 0',
         textAlign: 'center',
-        borderTop: '1px solid rgba(255,255,255,0.1)', // Тонкая светлая линия вместо жирной темной
-        backgroundColor: 'transparent',     // Делаем в цвет основного фона
-        color: '#000',                  // Светло-серый текст
+        borderTop: '1px solid rgba(255,255,255,0.1)',
+        backgroundColor: 'transparent',
+        color: '#000',
         fontSize: '14px',
         marginTop: 'auto',
         width: '100%'

@@ -18,7 +18,7 @@ export default function UsersPage() {
     useEffect(() => { fetchUsers(); }, []);
 
 
-    // Удаление
+    // Уведомление о удалении
     const deleteUserWithConfirm = (id) => {
         toast((t) => (
             <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -56,7 +56,7 @@ export default function UsersPage() {
             </button>
         </span>
         ), {
-            duration: 6000, // Увеличим время, чтобы пользователь успел нажать
+            duration: 6000,
             style: {
                 background: '#1c1c1f',
                 border: '1px solid #2d2d30',
@@ -66,7 +66,7 @@ export default function UsersPage() {
         });
     };
 
-// Сама логика удаления (вынесем отдельно)
+// Логика удаления
     const executeDelete = async (id) => {
         try {
             const res = await fetch(`http://localhost:5000/api/users/${id}`, { method: 'DELETE' });
@@ -124,7 +124,7 @@ export default function UsersPage() {
             return;
         }
 
-        // 3. Форматные проверки (RegExp и префиксы)
+        // Форматные проверки
         if (!newAccount.startsWith('company/')) {
             toast.error("Аккаунт должен начинаться с company/", {
                 style: { background: '#1c1c1f', color: '#fff' }
@@ -147,14 +147,14 @@ export default function UsersPage() {
             return;
         }
 
-        // 4. ОТПРАВКА НА СЕРВЕР
+        // Отправка на сервер
         try {
             const response = await fetch('http://localhost:5000/api/users', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     ...formData,
-                    email: newEmail, // Сохраняем уже почищенные данные
+                    email: newEmail,
                     phone: newPhone
                 })
             });
@@ -214,7 +214,7 @@ export default function UsersPage() {
         marginBottom: '30px'
     };
 
-    // Поля ввода - прозрачные с тонкой границей
+
     const inputStyle = {
         padding: '14px',
         backgroundColor: '#ffffff',
@@ -236,7 +236,7 @@ export default function UsersPage() {
         transition: '0.3s'
     };
 
-    // Красная кнопка удаления
+
     const deleteButtonStyle = {
         backgroundColor: 'rgba(255, 77, 79, 0.1)', // Прозрачно-красный
         color: '#ff4d4f',
@@ -247,7 +247,7 @@ export default function UsersPage() {
         fontSize: '13px'
     };
 
-    // Стили таблицы
+
     const thStyle = {
         padding: '18px 15px',
         textAlign: 'left',
@@ -271,7 +271,7 @@ export default function UsersPage() {
                 Управление пользователями
             </h2>
 
-            {/* Карточка формы добавления */}
+
             <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', marginBottom: '30px' }}>
                 <h3 style={{ marginTop: '0', color: '#000' }}>Добавить нового сотрудника</h3>
                 <form onSubmit={handleAddUser} style={{ display: 'flex', flexWrap: 'wrap', gap: '15px' }}>
@@ -282,8 +282,8 @@ export default function UsersPage() {
                     <input placeholder="Телефон" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} style={inputStyle} />
                     <button
                         type="submit"
-                        className="add-btn" // Вот здесь дописываем имя класса
-                        style={buttonStyle} // Твои существующие инлайн-стили остаются
+                        className="add-btn"
+                        style={buttonStyle}
                         onMouseDown={() => setIsAdding(true)}
                         onMouseUp={() => setIsAdding(false)}
                         onMouseLeave={() => setIsAdding(false)}
@@ -293,7 +293,7 @@ export default function UsersPage() {
                 </form>
             </div>
 
-            {/* Карточка таблицы и поиска */}
+
             <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
                     <h3 style={{ margin: '0', color: '#000' }}>Список сотрудников</h3>

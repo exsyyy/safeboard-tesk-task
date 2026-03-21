@@ -33,7 +33,6 @@ export default function WelcomePage() {
                     Frontend Developer
                 </h2>
                 <h1 style={{ color: '#000', fontSize: '3rem', margin: '0 0 20px 0', lineHeight: '1.1' }}>
-                    {/* Вставь сюда свое имя */}
                     Климов Семён
                 </h1>
                 <p style={{ color: '#000', fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '30px' }}>

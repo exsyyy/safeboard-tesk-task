@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 export default function GroupsPage() {
     const [groupsData, setGroupsData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [allUsers, setAllUsers] = useState([]); // Сюда сохраняем всех для фильтрации
-    const [selectedGroup, setSelectedGroup] = useState(null); // Имя выбранной группы для модалки
+    const [allUsers, setAllUsers] = useState([]);
+    const [selectedGroup, setSelectedGroup] = useState(null);
 
     useEffect(() => {
         const fetchAndProcessGroups = async () => {
@@ -12,7 +12,7 @@ export default function GroupsPage() {
                 const response = await fetch('http://localhost:5000/api/users');
                 const usersFromApi = await response.json();
 
-                // ВАЖНО: Сохраняем всех пользователей в стейт, чтобы модалка их видела
+
                 setAllUsers(usersFromApi);
 
                 // Логика группировки
@@ -36,7 +36,7 @@ export default function GroupsPage() {
         fetchAndProcessGroups();
     }, []);
 
-    // === СТИЛИ ===
+
     const cardStyle = {
         backgroundColor: '#fff',
         padding: '30px',
@@ -116,7 +116,7 @@ export default function GroupsPage() {
                 ))}
             </div>
 
-            {/* МОДАЛЬНОЕ ОКНО */}
+            {/* Модальное окно */}
             {selectedGroup && (
                 <div style={modalBackdropStyle} onClick={() => setSelectedGroup(null)}>
                     <div style={modalContentStyle} onClick={e => e.stopPropagation()}>
