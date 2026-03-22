@@ -34,7 +34,7 @@
 
 ```bash
 git clone https://github.com/exsyyy/safeboard-tesk-task
-cd safeboard-test-task
+cd safeboard-tesk-task
 ```
 
 ---
